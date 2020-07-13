@@ -1,7 +1,9 @@
 package Trie;
 
 public class TrieNode {
-    // Number of links to node children
+    /*  Number of links to node children.
+        We assume this Trie only has lowercase letters
+     */
     private static final int ALPHABET_LENGTH = 26;
 
     private TrieNode[] links;
