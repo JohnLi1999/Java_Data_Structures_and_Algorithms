@@ -7,6 +7,9 @@ public class DisjointSet {
 
     /** Initialize the disjoint set
      *
+     *  Time Complexity: O(N)
+     *      When N is the size of the disjoint set
+     *
      * @param size  the size of the disjoint set
      */
     public DisjointSet(int size) {
