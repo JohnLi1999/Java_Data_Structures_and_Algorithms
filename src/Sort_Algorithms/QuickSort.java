@@ -20,6 +20,14 @@ public class QuickSort {
         quickSort(arr, pivotIndex + 1, end);
     }
 
+    /*  https://en.wikipedia.org/wiki/Quicksort#Hoare_partition_scheme
+        Here is using Hoare Partition Scheme.
+        This partition method doesn't fix the final position of the pivot element,
+        hence can not be used in QuickSelect where pivot should be in it's final position after partitioning.
+
+        If we want to achieve that, please refer to Lomuto Partition Scheme
+        https://en.wikipedia.org/wiki/Quicksort#Lomuto_partition_scheme
+     */
     public static int partition(int[] arr, int start, int end) {
         /** this method uses the first element in the sub-array as the pivot **/
         int pivot = arr[start];
