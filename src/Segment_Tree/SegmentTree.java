@@ -65,7 +65,7 @@ public class SegmentTree {
         return node;
     }
 
-    /*  Time Complexity: O(N*log(N))  */
+    /*  Time Complexity: O(log(N))  */
     private int getSumInRange(SegmentTreeNode root, int start, int end) {
         // Return 0 if the range [start, end] is completely outside of the range [root.start, root.end]
         if (root == null || end < root.start || start > root.end) {
@@ -87,7 +87,7 @@ public class SegmentTree {
         return leftSum + rightSum;
     }
 
-    /*  Time Complexity: O(N*log(N))  */
+    /*  Time Complexity: O(log(N))  */
     private void update(SegmentTreeNode root, int pos, int diff) {
         // Return if the position is outside of the range [root.start, root.end]
         if (root == null || pos < root.start || pos > root.end) {
