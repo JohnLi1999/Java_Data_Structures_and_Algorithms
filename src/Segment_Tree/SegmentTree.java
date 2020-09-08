@@ -22,6 +22,7 @@ public class SegmentTree {
      * @param end   the end index
      * @return      the sum of elements between start and end index
      */
+    /*  Time Complexity: O(N*log(N))  */
     public int getSumInRange(int start, int end) {
         return root != null ? getSumInRange(root, start, end) : 0;
     }
@@ -32,6 +33,7 @@ public class SegmentTree {
      * @param pos   the position needs to be updated
      * @param val   the updated value
      */
+    /*  Time Complexity: O(N*log(N))  */
     public void update(int pos, int val) {
         int diff = nums[pos] - val;
         nums[pos] = val;
@@ -41,6 +43,9 @@ public class SegmentTree {
         }
     }
 
+    /*  Time Complexity: O(N)
+            Need to traverse all the elements in the array
+     */
     private SegmentTreeNode buildTree(int start, int end) {
         if (start > end) {
             return null;
@@ -60,6 +65,7 @@ public class SegmentTree {
         return node;
     }
 
+    /*  Time Complexity: O(N*log(N))  */
     private int getSumInRange(SegmentTreeNode root, int start, int end) {
         // Return 0 if the range [start, end] is completely outside of the range [root.start, root.end]
         if (root == null || end < root.start || start > root.end) {
@@ -81,6 +87,7 @@ public class SegmentTree {
         return leftSum + rightSum;
     }
 
+    /*  Time Complexity: O(N*log(N))  */
     private void update(SegmentTreeNode root, int pos, int diff) {
         // Return if the position is outside of the range [root.start, root.end]
         if (root == null || pos < root.start || pos > root.end) {
