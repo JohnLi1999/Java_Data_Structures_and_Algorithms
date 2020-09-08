@@ -11,7 +11,7 @@ public class SegmentTree {
         }
 
         this.nums = nums;
-        root = buildTree(nums, 0, nums.length - 1);
+        root = buildTree(0, nums.length - 1);
     }
 
     /**
@@ -41,7 +41,7 @@ public class SegmentTree {
         }
     }
 
-    private SegmentTreeNode buildTree(int[] nums, int start, int end) {
+    private SegmentTreeNode buildTree(int start, int end) {
         if (start > end) {
             return null;
         }
@@ -52,8 +52,8 @@ public class SegmentTree {
             node.sum = nums[start];
         } else {
             int mid = start + (end - start) / 2;
-            node.left = buildTree(nums, start, mid);
-            node.right = buildTree(nums, mid + 1, end);
+            node.left = buildTree(start, mid);
+            node.right = buildTree(mid + 1, end);
             node.sum = node.left.sum + node.right.sum;
         }
 
